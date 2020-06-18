@@ -5,6 +5,8 @@ import java.nio.file.StandardOpenOption;
 
 public class WriteToTxt {
 
+    //записываем таблицу в txt файл
+
     public void WriteLastLine(String report) throws IOException {
         File file = new File("out/example-report.txt");
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));

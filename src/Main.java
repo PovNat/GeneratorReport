@@ -27,12 +27,11 @@ public class Main {
             report = report + reportBuilder.getLines(row, colsWidth, pageVals.get(0));
 
         }
-        // System.out.println(reportBuilder.getPages(report, pageVals.get(1)));
+
         String rep;
         rep = reportBuilder.getPages(report, pageVals.get(1));
 
-        WriteToTxt wtt = new WriteToTxt();
+        WriteToTxt wtt = new WriteToTxt();   //запись в txt файл
         wtt.WriteLastLine(rep);
-
     }
 }
