@@ -24,8 +24,8 @@ public class ReadSourceData {
             e.printStackTrace();
         }
 
-        ArrayList <String> id = new ArrayList<>();    // делим данные согласно столбцам и
-        ArrayList <String> data = new ArrayList<>();  // распределяем их в отдельные ArrayLists
+        ArrayList <String> id = new ArrayList<>();     // делим данные согласно столбцам и
+        ArrayList <String> data = new ArrayList<>();   // распределяем их в отдельные ArrayLists
         ArrayList <String> name = new ArrayList<>();
 
         for (int i = 0; i<allInfo.size(); i=i+3){

@@ -85,7 +85,7 @@ public class SettingsLoader {
         return titles;
     }
 
-    public ArrayList<Integer> getColumsVals(){    // получаем ширину каждого столбца
+    public ArrayList<Integer> getColumsVals(){     // получаем ширину каждого столбца
         el.normalize();
         ArrayList<Integer> width = new ArrayList<>();
         String a;

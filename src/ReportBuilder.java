@@ -145,7 +145,7 @@ public class ReportBuilder {
 
     public String getPages(String rawRecord, int heigth) {
 
-        //формирует страницы из строк
+         //формирует страницы из строк
 
 
         String[] rawRecordArr = rawRecord.split("\r\n|\r|\n");

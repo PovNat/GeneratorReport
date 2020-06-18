@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
         SettingsLoader parser = new SettingsLoader("in/settings.xml"); // парсим xml-файл с настройками под таблицу
-        ArrayList<Integer> pageVals = parser.getPageSet();  // получаем ArrayList с параметрами страницы таблицы
+        ArrayList<Integer> pageVals = parser.getPageSet();   // получаем ArrayList с параметрами страницы таблицы
         ArrayList<Integer> colsWidth = parser.getColumsVals(); //получаем ArrayList пареметрами полей
         ArrayList<String> colsTitle = parser.getColumsTitles(); //получаем ArrayList с названиями полей
 
