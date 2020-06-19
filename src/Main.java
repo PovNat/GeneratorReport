@@ -5,12 +5,12 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
-        SettingsLoader parser = new SettingsLoader("in/settings.xml"); // парсим xml-файл с настройками под таблицу
+        SettingsLoader parser = new SettingsLoader(args[0]); // парсим xml-файл с настройками под таблицу
         ArrayList<Integer> pageVals = parser.getPageSet();   // получаем ArrayList с параметрами страницы таблицы
         ArrayList<Integer> colsWidth = parser.getColumsVals();  //получаем ArrayList пареметрами полей
         ArrayList<String> colsTitle = parser.getColumsTitles(); //получаем ArrayList с названиями полей
 
-        ReadSourceData reader = new ReadSourceData();
+        ReadSourceData reader = new ReadSourceData(args[1]);
         ArrayList<ArrayList<String>> data = reader.getSourceData();  //получаем ArrayList из ArrayLists со всем данными для таблицы
 
         String report = "";
@@ -31,7 +31,7 @@ public class Main {
         String rep;
         rep = reportBuilder.getPages(report, pageVals.get(1));
 
-        WriteToTxt wtt = new WriteToTxt();   //запись в txt файл
+        WriteToTxt wtt = new WriteToTxt(args[2]);   //запись в txt файл
         wtt.WriteLastLine(rep);
     }
 }

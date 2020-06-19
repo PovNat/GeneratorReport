@@ -1,11 +1,16 @@
 import java.io.*;
 
 public class WriteToTxt {
+    private final String path;
 
-     //записываем таблицу в txt файл
+    public WriteToTxt(String arg) {
+        this.path = arg;
+    }
+
+    //записываем таблицу в txt файл
 
     public void WriteLastLine(String report) throws IOException {
-        File file = new File("out/example-report.txt");
+        File file = new File(this.path);
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
         try {
             writer.write(report);

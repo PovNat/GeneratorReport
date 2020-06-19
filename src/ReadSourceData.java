@@ -2,14 +2,18 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ReadSourceData {
-    public ReadSourceData() {
+    private final String path;
+
+    public ReadSourceData(String path) {
+        this.path=path;
+
     }
     public ArrayList <ArrayList<String>> getSourceData() throws FileNotFoundException, UnsupportedEncodingException {
 
         //достаем все данные из файла
 
         ArrayList<String> allInfo = new ArrayList<>();
-        String fileName = "in/source-data.tsv";
+        String fileName = this.path;
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), "UTF16"));
         try {
             String line;

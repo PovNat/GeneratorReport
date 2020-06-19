@@ -155,20 +155,28 @@ public class ReportBuilder {
         int count = 0;
 
         while (numOfLines > 0) {
-            pages = pages + this.getHeader();
-            for (int i = 0; i < heigth - 3; i++) {
-                lastRecord = rawRecordArr[count];
-                if (i == heigth - 4 && lastRecord.contains("-------")) {
+            pages = pages + this.getHeader()+"\n";
+            for(int i=0; i<heigth-3; i++){
+                lastRecord=rawRecordArr[count];
+                if (i==0 & lastRecord.contains("--------")){
                     count++;
                     numOfLines--;
                     continue;
+                }
+                else if (i==heigth-4 & lastRecord.contains("--------")){
+                    count++;
+                    numOfLines--;
+                    break;
                 } else {
-                    pages = pages + "\n" + rawRecordArr[count];
+                    pages+=lastRecord+"\n";
                     count++;
                     numOfLines--;
                 }
+                if (numOfLines==0){
+                    break;
+                }
             }
-            pages += "\n~\n";
+            pages += "~\n";
         }
         return pages;
     }
